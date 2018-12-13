@@ -1,0 +1,23 @@
+.hashtag-filter {
+    padding-bottom: 10px;
+    padding-top: 0px;
+    font-family: 'Lato';
+    font-size: 20px;
+    text-align: center;
+}
+
+.post-icon {
+    position: fixed;
+    padding: 10px;
+    bottom: 60px;
+    right: 20px;
+    width: auto;
+    background-color: crimson;
+    color: white;
+    font-size:150%;
+    text-decoration: none;
+}
+
+.newsfeed {
+    padding: 5px;
+}

@@ -1,0 +1,27 @@
+.avatar {
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+.author-card {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    border-bottom-color: tomato;
+}
+
+.author-name {
+    font-size: 100%;
+    color: darkslategray;
+}
+.author-title {
+    font-size: 80%;
+    color: crimson;
+}
+
+.exec-message-content {
+    margin-top: 10px;
+    align-content: space-around;
+    font-family: 'Old Standard TT', serif;
+    font-size: 100%;
+}

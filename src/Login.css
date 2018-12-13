@@ -1,0 +1,12 @@
+.card-login-text {
+    font-size: 90%;
+}
+
+.card-login {
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    border-color: white;
+}

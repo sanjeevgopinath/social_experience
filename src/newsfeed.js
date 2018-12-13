@@ -3,7 +3,7 @@ import Post from './Post.js';
 import { config } from './config.js';
 import './newsfeed.css';
 import { Link } from 'react-router-dom';
-import { authService } from './authService.js'
+import { authService } from './authService.js';
 class newsfeed extends Component {
     
     constructor(props) {
@@ -39,6 +39,15 @@ class newsfeed extends Component {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             },
         })
+        .then(function(response) {
+            if (response.status === 401) {
+              authService.signout();
+              this.props.history.push('\Login');
+            }
+            else {
+                return response;
+            }
+          })
         .then(response => response.json())
 //        .then(function(response) { self.setState({ postsReady: true, posts: response }); return response; })
         .then(response => {

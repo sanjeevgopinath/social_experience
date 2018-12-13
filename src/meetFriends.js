@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { config } from './config.js';
 import './meetFriends.css'
+import { authService } from './authService.js'
 
 class meetFriends extends Component {
     
@@ -29,6 +30,15 @@ class meetFriends extends Component {
             },
             body: payload
         })
+        .then(function(response) {
+            if (response.status === 401) {
+              authService.signout();
+              this.props.history.push('\Login');
+            }
+            else {
+                return response;
+            }
+          })
         .then(console.log("Guess validated?"));
     }
 

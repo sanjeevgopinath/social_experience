@@ -3,7 +3,7 @@ import Post from './Post.js';
 import { config } from './config.js';
 import './newsfeed.css';
 import { Link } from 'react-router-dom';
-
+import { authService } from './authService.js'
 class newsfeed extends Component {
     
     constructor(props) {
@@ -42,7 +42,7 @@ class newsfeed extends Component {
         .then(response => response.json())
 //        .then(function(response) { self.setState({ postsReady: true, posts: response }); return response; })
         .then(response => {
-                            if(localStorage.getItem("posts")) {
+                                if(localStorage.getItem("posts")) {
                                 var postsFromStorage = localStorage.getItem("posts");
                                 postsFromStorage = JSON.parse(postsFromStorage);
                                 response = response.reverse();
@@ -55,7 +55,8 @@ class newsfeed extends Component {
                                 localStorage.setItem("posts", JSON.stringify(response));
                                 return response;
                             }
-                          }   
+                          
+                        }   
              )
         .then(postsJSON => self.setState({ postsReady: true, posts: postsJSON }))
         .catch(error => console.log(error))
@@ -88,7 +89,7 @@ class newsfeed extends Component {
             return (
                 <div class="newsfeed">
                     No Posts To Show!
-                    <div class="post-icon"><Link to={`/postForm`} style={{color: 'white'}}><i class="material-icons">add</i> New Post</Link></div>
+                    <div class="post-icon"><Link to={`/postForm`} style={{color: 'white'}}>+ Join Conversation</Link></div>
                 </div>
             );
         }        

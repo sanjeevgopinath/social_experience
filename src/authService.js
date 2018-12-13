@@ -1,5 +1,7 @@
+import { config } from './config.js';
+
 export const authService = {
-    api_server: 'http://129.213.92.76:4000/',
+    api_server: config.api_server,
     path_authenticate: 'users/authenticate',
     
     isAuthenticated() {
@@ -40,11 +42,8 @@ export const authService = {
       });
     },
 
-
     signout(cb) {
-      this.isAuthenticated = false;
       localStorage.clear();
-      this.history.push('/login');
     },
 
 };

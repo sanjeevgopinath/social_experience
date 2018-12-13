@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {config} from './config.js';
 import {authService} from './authService.js';
+import { Route, Redirect } from 'react-router-dom';
 
 class resetPassword extends Component {
 
@@ -41,6 +42,7 @@ class resetPassword extends Component {
                 body: payload
             })
             .then(authService.signout())
+            .then(this.props.history.push('/Login'));
             
         }
         else {

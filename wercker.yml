@@ -10,18 +10,27 @@ build:
       name: npm create react project 
       code: |
         npm init react-app ora-se-symposium-front-end
-        cp -R ./* ./ora-se-symposium-front-end/
-        cd ora-se-symposium-front-end
-        ls -l
-        rm -rf node_modules
-        npm install
-        npm run build
-        serve -s build
+        cp -R ./src ./ora-se-symposium-front-end/
+        cp -R ./public ./ora-se-symposium-front-end/
+        cp package-lock.json ./ora-se-symposium-front-end/
+        cp package.json ./ora-se-symposium-front-end/
+        
+        
+    - script: 
+        name: install modules and build project
+        code: |
+          ls -l
+          rm -rf node_modules
+          npm install
+          npm run build
+          serve -s build
+        
     - script:
         name: echo nodejs information
         code: |
           echo "node version $(node -v) running"
-          echo "npm version $(npm -v) running"          
+          echo "npm version $(npm -v) running" 
+          
 docker-build:
   steps:
     - internal/docker-build:

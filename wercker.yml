@@ -27,7 +27,6 @@ build:
     - script:
         name: echo nodejs information
         code: |
-          cat ./config.json
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"          
 docker-build:

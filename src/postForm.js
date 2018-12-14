@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { config } from './config.js';
 import './postForm.css';
 import axios from 'axios';
-import imageCompression from 'browser-image-compression';
-
-
+import { loadProgressBar } from 'axios-progress-bar';
+import './nprogress.css';
 
 class PostForm extends Component {
     
@@ -26,8 +25,26 @@ class PostForm extends Component {
 
     fileChangedHandler = (event) => {
         const file = event.target.files[0];
+        this.setState({selectedFile: file});
+        
+        /* 
+        var compressorSettings = {  
+            quality: .6,
+            mimeType: 'auto',
+            checkOrientation: true,
+        };
+        imageCompressor.run(file, {
+            compressorSettings,
+            success(result) {
+                this.setState({selectedFile: result});
+            },
+            error(e) {
+              console.log(e.message);
+            }
+        }); 
+        
         imageCompression(file, 2, 500)
-        .then(compressedFile => this.setState({selectedFile: compressedFile}));
+        .then(compressedFile => this.setState({selectedFile: compressedFile})); */
     }
     
     handlePostSubmit(e) {
@@ -39,39 +56,51 @@ class PostForm extends Component {
             timeStampedFileName = timeStampedFileName.getTime().toString();
             timeStampedFileName = timeStampedFileName.substr(7,14) + "-";
             var imgUpload_url = config.obj_store_url + timeStampedFileName + this.state.selectedFile.name;
-            axios.put(imgUpload_url, this.state.selectedFile);
+            axios.put(imgUpload_url, this.state.selectedFile)
+            .then(response => {
+                var imgReadURL = timeStampedFileName + this.state.selectedFile.name;
+                var payload = JSON.stringify({
+                    "postContent": this.state.postcontent,
+                    imgUrls: [ imgReadURL ],
+                });
+                fetch(config.api_server + config.path_createMessage, {
+                    method: 'POST',
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8",
+                        "Authorization": "Bearer " + localStorage.getItem("token"),
+                    },
+                    body: payload
+                });
+            })
+            .then(this.props.history.push('/newsfeed'));
             isImgPresent = true;
         }
         catch {
             isImgPresent = false;
         }
         /* Upload the post into the SE Backend */
-        if(isImgPresent) {
-            var imgReadURL = config.obj_store_read_url + timeStampedFileName + this.state.selectedFile.name;
-            var payload = JSON.stringify({
-                "postContent": this.state.postcontent,
-                imgUrls: [ imgReadURL ],
-            });
-        }
-        else {
+        if(!isImgPresent) {
             var payload = JSON.stringify({
                 "postContent": this.state.postcontent,
             });
+            fetch(config.api_server + config.path_createMessage, {
+                method: 'POST',
+                mode: "cors",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Authorization": "Bearer " + localStorage.getItem("token"),
+                },
+                body: payload
+            })
+            .then(this.props.history.push('/newsfeed'));
         }
-        fetch(config.api_server + config.path_createMessage, {
-            method: 'POST',
-            mode: "cors",
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "Authorization": "Bearer " + localStorage.getItem("token"),
-            },
-            body: payload
-        })
-        .then(this.props.history.push('/newsfeed'));
+        
     }
 
     render() {
         const { postcontent } = this.state;
+        loadProgressBar();
         return(
             <div class="post-form">
                 <div class="post-form-title">Write a new post</div>

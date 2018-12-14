@@ -1,3 +1,10 @@
 .btn-addConnection {
     margin-top: 10px;
 }
+
+.otp {
+    font-size: 110%;
+    margin-left: 10px;
+    color: orangered;
+    font-family: 'Roboto Mono';
+}

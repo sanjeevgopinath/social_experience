@@ -8,18 +8,21 @@ class execMessage extends Component {
         return(
             <div>
                 <div class="container">
-                    <div class="author-card border-bottom">
+                    <div class="author-card">
                         <div class="row align-items-center justify-content-center">
-                                <Img class="avatar col-xs-3" src="vaibhav_g.jpg" />
+                                <Img class="avatar col-xs-3" src="https://aivloqpzen.cloudimg.io/width/600/n/http://129.213.92.76:5000/vaibhav_gawde.jpg" />
                                 <div class="col-9"><span class="author-name">Vaibhav Gawde</span><br /><span class="author-title">Head - India Sales Consulting</span></div>
                         </div>
                     </div>
+                    <hr />
                     <div class="exec-message-content">
                         <p>Hello { localStorage.getItem("firstname") },</p>
-                        <p>Welcome to the SE Symposium!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis urna leo. Maecenas maximus ipsum sit amet risus aliquet auctor. Praesent at commodo nisi. Etiam maximus laoreet turpis id ultricies. Etiam mattis nisl non leo rutrum, sed elementum massa tempus. Maecenas pretium tellus nunc, ut tristique orci rutrum ut. Maecenas gravida mollis nunc, quis vehicula orci malesuada at. Quisque et fermentum odio.</p><p>Proin sapien nisi, dictum non lectus ut, lobortis faucibus ipsum. Suspendisse scelerisque, urna sed consequat luctus, nibh quam posuere sapien, quis dictum mauris felis eget diam. Mauris vehicula diam odio, eu pharetra ex feugiat nec. Fusce dolor eros, luctus quis finibus non, mattis et turpis. Fusce ut mi elementum, volutpat nulla sit amet, molestie nisi. Quisque egestas luctus orci vitae mollis.</p>
-                        <p>Phasellus fermentum imperdiet mauris vitae viverra. Curabitur vulputate posuere urna in semper. Aenean finibus est nisl, eu placerat quam posuere eu. Nunc tempus augue eu metus laoreet, in eleifend risus feugiat. Phasellus vestibulum faucibus mauris vitae sodales. Vestibulum ac mi a libero convallis fermentum. Etiam ultricies, est ut sollicitudin tristique, nisi ipsum tincidunt neque, tempor consequat magna ipsum at ante. Phasellus congue ex eget erat ultricies laoreet. </p>
-                        <p>- Vaibhav Gawde</p>
+                        <p>Welcome to the FY19 India SE Symposium!</p>
+                        <p>“EVERYBODY GETS THE CULTURE THEY DESERVE”</p>
+                        <p>And WE at the India SE team have managed to build our own culture by making SE symposium as an annual phenomenon. This year’s theme is our transformation from SC to SE – Sales Consulting to Solution Engineering, much needed transition for our journey towards India Cloud DC. Join us to hear from India SMT, To learn from Cloud experts, To build, extend and nurture your network, To share and get enlighten from each other’s experiences, most importantly to celebrate our success and to have fun.</p>
+                        <p>See you all at The Pink City!</p>
+                        <p>Regards,</p>
+                        <p>Vaibhav Gawde</p>
                     </div>
                 </div>
             </div>

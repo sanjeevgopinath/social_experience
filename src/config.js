@@ -9,4 +9,6 @@ export const config = {
     path_generate_otp: 'users/generateOTP',
     obj_store_url: "https://objectstorage.us-ashburn-1.oraclecloud.com/p/ShyUyJr14FZAa4rMfwNRvAFgPYzhLWp4IULM_vTv-yQ/n/gse00014894/b/sc_symposium/o/",
     obj_store_read_url: "https://objectstorage.us-ashburn-1.oraclecloud.com/n/gse00014894/b/sc_symposium/o/",
+    image_cdn_url: "https://aivloqpzen.cloudimg.io/width/600/n/" + "https://objectstorage.us-ashburn-1.oraclecloud.com/n/gse00014894/b/sc_symposium/o/",
+    /* Another CDN: http://test-socialexperience.imgix.net/ */
 }

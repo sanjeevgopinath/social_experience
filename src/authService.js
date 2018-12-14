@@ -12,8 +12,9 @@ export const authService = {
     },
     
     handleResponseErrors(response) {
-      if(response.firstname && response.token) {
-          localStorage.setItem("firstname", response.firstname);
+      if(response.firstName && response.token) {
+          localStorage.setItem("firstname", response.firstName);
+          localStorage.setItem("lastname", response.lastName);
           localStorage.setItem("token", response.token);
           return response;
       }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Post.css';
 import Img from 'react-image';
+import {config} from './config.js';
 
 class Post extends Component {
     
@@ -51,14 +52,13 @@ class Post extends Component {
                 <div class="card-body card-post-body">
                     <p class="card-text post-author">{ this.props.value.createdBy.firstName + " " + this.props.value.createdBy.lastName } <span class="post-timestamp"> - { this.timeSince(this.props.value.createdDate) }</span></p>
                     <p class="card-text post-content">{ this.props.value.postContent }</p>
-                    { this.props.value.imgUrls[0] && <img class="img-thumbnail newsfeed-picture" src={ this.props.value.imgUrls[0] }  /> }
+                    { this.props.value.imgUrls[0] && <Img class="img-thumbnail newsfeed-picture" src={ config.image_cdn_url + this.props.value.imgUrls[0] }  /> }
                 </div>
                 <div class="card-footer card-post-footer text-muted ro">
                     <label class="like-switch col-xs-3">
-                        <input type="checkbox" checked={ this.props.value.isLiked }/>
+                        <input type="checkbox"/>
                         <i class="material-icons icon-liked">favorite</i>
                     </label>
-                    <span class="col-xs-2">{ this.props.value.likeCount }</span>
                     { this.props.value.isOwned && <i class="col-xs-2 material-icons icon-deletepost">delete_sweep</i> }
                 </div>                
             </div>

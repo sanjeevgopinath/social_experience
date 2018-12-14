@@ -29,10 +29,10 @@ docker-build:
   steps:
     - internal/docker-build:
         dockerfile: Dockerfile
-        image-name: oracle-se-symposium-backend
+        image-name: oracle-se-symposium-frontend
 
     - internal/docker-push: 
-        image-name: oracle-se-symposium-backend
+        image-name: oracle-se-symposium-frontend
         username: $DOCKER_USERNAME  
         password: $DOCKER_PASSWORD 
         repository: $DOCKER_USERNAME/$REPO_ADDRESS

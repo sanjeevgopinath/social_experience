@@ -9,7 +9,7 @@ build:
     - script:
       name: npm create react project 
       code: |
-        npm init react-app ora-se-symposium-front-end
+        npm init react-app app
         cp -R ./src ./app/
         cp -R ./public ./app/
         cp package-lock.json ./app/

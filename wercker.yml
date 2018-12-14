@@ -22,6 +22,7 @@ build:
     - script:
       name: npm run build 
       code: | 
+        ls -l
         npm run build
         serve -s build
     - script:

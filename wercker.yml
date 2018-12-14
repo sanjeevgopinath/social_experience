@@ -1,13 +1,7 @@
 box: 
   id: node:10
 build:
-  # The steps that will be executed on build
-  # Steps make up the actions in your pipeline
-  # Read more about steps on our dev center:
-  # https://devcenter.wercker.com/development/steps/
   steps:
-    # A step that executes `npm install` command
-    - npm-install
     - bash-template:
         cwd: $WERCKER_ROOT
     # A custom script step, name value is used in the UI
@@ -16,6 +10,8 @@ build:
       name: npm run build 
       code: | 
         ls -l
+        rm -rf node_modules
+        npm install
         npm run build
         serve -s build
     - script:

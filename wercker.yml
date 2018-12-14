@@ -1,5 +1,5 @@
 box: 
-  id: node:latest
+  id: node:10
 dev:
   steps:
     - npm-install

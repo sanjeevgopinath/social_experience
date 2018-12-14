@@ -1,12 +1,5 @@
 box: 
   id: node:10
-dev:
-  steps:
-    - npm-install
-    - internal/watch:
-        code: npm start
-        reload: true
-        
 build:
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline

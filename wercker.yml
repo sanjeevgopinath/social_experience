@@ -10,10 +10,10 @@ build:
       name: npm create react project 
       code: |
         npm init react-app ora-se-symposium-front-end
-        cp -R ./src ./ora-se-symposium-front-end/
-        cp -R ./public ./ora-se-symposium-front-end/
-        cp package-lock.json ./ora-se-symposium-front-end/
-        cp package.json ./ora-se-symposium-front-end/
+        cp -R ./src ./app/
+        cp -R ./public ./app/
+        cp package-lock.json ./app/
+        cp package.json ./app/
         
         
     - script: 

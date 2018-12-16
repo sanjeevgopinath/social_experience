@@ -11,7 +11,7 @@
 }
 
 .author-name {
-    font-size: 120%;
+    font-size: 100%;
     color: darkslategray;
 }
 
@@ -24,5 +24,10 @@
     margin-top: 10px;
     align-content: space-around;
     font-family: 'Old Standard TT', serif;
-    font-size: 110%;
+    font-size: 100%;
+}
+
+.quote {
+    font-family:Lora;
+    font-size:130%;
 }

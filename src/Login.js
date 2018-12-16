@@ -42,7 +42,7 @@ class Login extends Component {
                 this.setState({error_ispresent_fields: true});
                 authService.authenticate(username, password)
                 .then(response => {
-                    console.log("Success Response Bro!");
+                    console.log("Success Response!");
                     this.props.history.push('/execMessage');
                 })
                 .catch(err => {
@@ -78,6 +78,8 @@ class Login extends Component {
                                         <button className="btn btn-primary" type="submit">Join the Party!</button>
                                     </div>
                                 </form>
+                                <hr />
+                                <div class="help-info">Solution Engineered on Oracle Cloud By:<p> Sanjeev Gopinath (9741598679) & Vamsi Ramakrishnan (9042689306)</p></div>
                             </div>
                         </div>
                     </div>

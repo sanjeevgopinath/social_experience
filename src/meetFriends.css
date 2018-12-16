@@ -8,3 +8,7 @@
     color: orangered;
     font-family: 'Roboto Mono';
 }
+
+.caption {
+    font-size:80%;
+}

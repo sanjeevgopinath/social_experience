@@ -5,8 +5,8 @@ class livePoll extends Component {
     render() {
         return(
             <div>
-                <h3>Live Poll</h3>
-                <div>Link will be provided here!</div>
+                <h2>Live Poll</h2>
+                <div>will appear here during the event...</div>
             </div>
         );
     }

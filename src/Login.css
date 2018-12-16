@@ -10,3 +10,9 @@
 .btn-primary:hover {
     border-color: white;
 }
+
+.help-info {
+    text-align: center;
+    color: grey;
+    font-size:80%;
+}

@@ -1,0 +1,62 @@
+box: 
+  id: node:10
+build:
+  steps:
+    - bash-template:
+        cwd: $WERCKER_ROOT
+    # A custom script step, name value is used in the UI
+    # and the code value contains the command that get executed
+    - script:
+      name: npm create react project 
+      code: |
+        npm init react-app app
+        cp -R ./src ./app/
+        cp -R ./public ./app/
+        cp package-lock.json ./app/
+        cp package.json ./app/
+        
+        
+    - script: 
+        name: install modules and build project
+        code: |
+          ls -l
+          rm -rf node_modules
+          npm install
+          npm run build
+          serve -s build
+        
+    - script:
+        name: echo nodejs information
+        code: |
+          echo "node version $(node -v) running"
+          echo "npm version $(npm -v) running" 
+          
+docker-build:
+  steps:
+    - internal/docker-build:
+        dockerfile: Dockerfile
+        image-name: oracle-se-symposium-frontend
+
+    - internal/docker-push: 
+        image-name: oracle-se-symposium-frontend
+        username: $DOCKER_USERNAME  
+        password: $DOCKER_PASSWORD 
+        repository: $DOCKER_USERNAME/$REPO_ADDRESS
+        tag: ${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT} , latest
+
+kubernetes-deploy:
+  steps: 
+    - bash-template:
+        cwd: $WERCKER_ROOT/.
+        
+    - script:
+        name: echo nodejs information
+        code: | 
+          cat ./front-end-deployment.yaml
+          
+    - kubectl:
+        server: $KUBE_ENDPOINT
+        token: $KUBE_USER_TOKEN
+        cwd: $WERCKER_ROOT
+        insecure-skip-tls-verify: true
+        command: apply -f front-end-deployment.yaml

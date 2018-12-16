@@ -16,8 +16,14 @@ class PostForm extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handlePostSubmit = this.handlePostSubmit.bind(this);
         this.fileInput = React.createRef();
+        this.addToPost = this.addToPost.bind(this);
     }
     
+    addToPost(val) {
+        var postcontentNew = this.state.postcontent + " " + val;
+        this.setState({ postcontent: postcontentNew });
+    }
+
     handleChange(e) {
         const { name, value } = e.target;
         this.setState({ [name]: value });
@@ -107,7 +113,18 @@ class PostForm extends Component {
                 <form name="form" onSubmit={this.handlePostSubmit}>  
                     <textarea class="form-control" name="postcontent" id="post-content-1" rows="3" maxlength="300" value={postcontent} onChange={this.handleChange}></textarea>
                     <p></p>
-                    <p>Add a photo? <input type="file" onChange={this.fileChangedHandler} name="post_picture" accept="image/*"></input> </p>
+                    <p>Add a photo? <input type="file" onChange={this.fileChangedHandler} name="post_picture" accept="image/*"></input></p>
+                    <div class="hashtags-box container row">
+                    
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#symposiumprep")}>#symposiumprep</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#ArrivingInStyle")}>#ArrivingInStyle</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromBengaluru")}>#FromBengaluru</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromChennai")}>#FromChennai</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromDelhi")}>#FromDelhi</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromMumbai")}>#FromMumbai</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromKolkata")}>#FromKolkata</span>
+                    
+                    </div>
                     <button type="button" class="btn btn-success post-button" type="submit">Post</button>
                 </form>
             </div>

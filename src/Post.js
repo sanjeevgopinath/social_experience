@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Post.css';
 import Img from 'react-image';
 import {config} from './config.js';
-
+import ReactHashtag from 'react-hashtag';
 class Post extends Component {
     
     constructor(props) {
@@ -51,7 +51,7 @@ class Post extends Component {
             <div class="card card-post">                
                 <div class="card-body card-post-body">
                     <p class="card-text post-author">{ this.props.value.createdBy.firstName + " " + this.props.value.createdBy.lastName } <span class="post-timestamp"> - { this.timeSince(this.props.value.createdDate) }</span></p>
-                    <p class="card-text post-content">{ this.props.value.postContent }</p>
+                    <p class="card-text post-content"><ReactHashtag onHashtagClick={val => this.props.handleHashtag(val)}>{ this.props.value.postContent }</ReactHashtag></p>
                     { this.props.value.imgUrls[0] && <Img class="img-thumbnail newsfeed-picture" src={ config.image_cdn_url + this.props.value.imgUrls[0] }  /> }
                 </div>
                 <div class="card-footer card-post-footer text-muted ro">

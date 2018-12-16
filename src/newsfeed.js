@@ -11,16 +11,19 @@ class newsfeed extends Component {
         if(localStorage.posts) {
             this.state = {
                 postsReady: true,
-                posts: JSON.parse(localStorage.posts)
+                posts: JSON.parse(localStorage.posts),
+                filterHashtag: ''
             }
         }
         else {
             this.state = {
                 postsReady: false,
-                posts: []
+                posts: [],
+                filterHashtag: ''
             }
         }
-
+        this.handleHashtag = this.handleHashtag.bind(this);
+        this.removeHashtagFilter = this.removeHashtagFilter.bind(this);
     }
     
     getAllPosts() {
@@ -80,14 +83,24 @@ class newsfeed extends Component {
         clearInterval(this.autoRefreshInterval);
     }
 
+    handleHashtag(value) {
+        console.log(value);
+        this.setState({filterHashtag: value});
+    }
+
+    removeHashtagFilter() {
+        this.setState({filterHashtag: ''});
+    }
+    
     render() {
         try {
-                const posts = this.state.posts.map((post, index) =>
-                <Post key={index} value={post} />
+                const posts = this.state.posts.filter((post) => post.postContent.includes(this.state.filterHashtag)).map((post, index) =>
+                <Post key={index} value={post} handleHashtag={this.handleHashtag.bind(this)}/>
                 );
                 return(
                     <div class="newsfeed container-fluid">
-                        <div class="hashtag-filter">All Posts</div>
+                        <div class="hashtag-filter">Showing { this.state.filterHashtag ? <span class="hashtag-title"> { this.state.filterHashtag} </span> : "All Posts" }
+                        { this.state.filterHashtag && <span class="cancel-hashtag" onClick={ this.removeHashtagFilter }><i class="material-icons">cancel</i></span> } </div>
                         { this.state.postsReady && posts }
                         <div class="post-icon"><Link to={`/postForm`} style={{color: 'white'}}>+ Join Conversation</Link></div>
                     </div>

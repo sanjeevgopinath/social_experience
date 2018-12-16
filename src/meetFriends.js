@@ -18,8 +18,14 @@ class meetFriends extends Component {
             hideError: true,
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleSelfieClick = this.handleSelfieClick.bind(this);
         this.handleAddConnectionSubmit = this.handleAddConnectionSubmit.bind(this);
         this.handleGenerateOTPSubmit = this.handleGenerateOTPSubmit.bind(this);
+    }
+
+    handleSelfieClick(e) {
+        e.preventDefault();
+        this.props.history.push('\postForm');
     }
 
     handleAddConnectionSubmit(e) {
@@ -87,11 +93,12 @@ class meetFriends extends Component {
                 <div class="card card-post">                
                     <div class="card-body card-post-body">
                         <form onSubmit={this.handleGenerateOTPSubmit}>
-                            <p>Generate an OTP and share it with your colleague:</p>
+                            <p>You can Generate an OTP and share it with your colleague...</p>
                             <button className="btn btn-primary" type="submit">Generate OTP</button>{ my_otp && <span class="otp fade show">OTP: { my_otp }</span> }
                         </form>
                     </div>
                 </div>
+                <p class="separator">--- or ---</p>
                 <div class="card card-post">
                     <div class="card-body card-post-body">
                         { !hideError && <div class="card-text alert alert-danger">The OTP you've entered is invalid. Try again?</div> }
@@ -101,7 +108,7 @@ class meetFriends extends Component {
                             <hr />
                             <p class="mb-0">LOB: { designation } </p>
                             <p class="mb-0">Location: { location } </p>
-                            <button className="btn btn-primary" onClick={ this.props.history.push("\postForm") }>Upload a Selfie Together</button>
+                            <button className="btn btn-primary btn-addSelfie" onClick={ this.handleSelfieClick }>Upload a Selfie Together</button>
                         </div> }
                         <p class="card-text">Enter your colleague's OTP here: </p>
                         <form onSubmit={ this.handleAddConnectionSubmit }>

@@ -21,3 +21,11 @@
 .newsfeed {
     padding: 5px;
 }
+
+.cancel-hashtag {
+    margin-left: 10px;
+}
+
+.hashtag-title {
+    color: blue;
+}

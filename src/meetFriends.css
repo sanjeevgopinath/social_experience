@@ -12,3 +12,11 @@
 .caption {
     font-size:80%;
 }
+
+.separator {
+    text-align: center;
+}
+
+.btn-addSelfie {
+    margin-top: 5px;
+}

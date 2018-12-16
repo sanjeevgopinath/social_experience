@@ -62,3 +62,8 @@ input:checked + .icon-liked {
     padding-left: 10px;
     font-size: 165%;
 }
+
+.post-content span {
+    color: blue;
+    font-size:100%;
+}

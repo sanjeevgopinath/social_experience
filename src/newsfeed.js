@@ -76,7 +76,7 @@ class newsfeed extends Component {
 
     componentDidMount() {
         this.getAllPosts();
-        this.autoRefreshInterval = setInterval(() => this.getAllPosts(), 10000)
+        this.autoRefreshInterval = setInterval(() => this.getAllPosts(), 10000);
     }
 
     componentWillUnmount() {

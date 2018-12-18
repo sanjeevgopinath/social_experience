@@ -375,6 +375,34 @@ class eventInfo extends Component {
 						  style={{ color: "#503331" }}
 						/>
 						<TimelineBlip
+						  title="Why Stay Current & Use Opportunity to Sell Hardware"
+						  icon={
+							<i className="material-icons xs-18">
+							  lightbulb_outline{" "}
+							</i>
+						  }
+						  iconColor="#03a9f4"
+						  style={{ color: "#503331" }}
+						/>
+						<TimelineBlip
+						  title="Awards"
+						  icon={
+							<i className="material-icons xs-18">plus_one </i>
+						  }
+						  iconColor="#03a9f4"
+						  style={{ color: "#503331" }}
+						/>
+						<TimelineBlip
+						  title="Entertainment - Skit"
+						  icon={
+							<i className="material-icons xs-18">
+							  lightbulb_outline{" "}
+							</i>
+						  }
+						  iconColor="#03a9f4"
+						  style={{ color: "#503331" }}
+						/>
+						<TimelineBlip
 						  title="Marketing the Time Machine"
 						  icon={
 							<i className="material-icons xs-18">

@@ -14,10 +14,10 @@ class Footer extends Component {
                             <Link to={`/meetFriends`}><span class="material-icons bottom-bar-icon">group_add</span></Link>
                         </div>
                         <div class="col-2">
-                            <Link to={`/livePoll`}><span class="material-icons bottom-bar-icon">poll</span></Link>
+                            <Link to={`/morningActivities`}><span class="material-icons bottom-bar-icon">wb_sunny</span></Link>
                         </div>
                         <div class="col-2">
-                            <Link to={`/puzzly`}><span class="material-icons bottom-bar-icon">grid_on</span></Link>
+                            <Link to={`/cityTour`}><span class="material-icons bottom-bar-icon">commute</span></Link>
                         </div>
                         <div class="col-2">
                             <span class="material-icons bottom-bar-icon">star</span>

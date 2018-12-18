@@ -18,7 +18,8 @@ import puzzly from './puzzly.js';
 import postForm from './postForm.js';
 import { PrivateRoute } from './PrivateRoute.js'
 import resetPassword from './resetPassword.js';
-
+import cityTour from './cityTour.js';
+import morningActivities from './morningActivities';
 class App extends Component {
   render() {
     return (
@@ -45,7 +46,9 @@ const Main = () => (
         <PrivateRoute exact path='/eventInfo' component={eventInfo}/>
         <PrivateRoute exact path='/postForm' component={postForm} />
         <PrivateRoute exact path='/resetPassword' component={resetPassword} />
-        
+        <PrivateRoute exact path='/cityTour' component={cityTour} />
+        <PrivateRoute exact path='/morningActivities' component={morningActivities} />
+
         <Route path='/Login' component={Login}/>
       </Switch>
   </main>

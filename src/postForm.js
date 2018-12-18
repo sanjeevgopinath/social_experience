@@ -116,13 +116,16 @@ class PostForm extends Component {
                     <p>Add a photo? <input type="file" onChange={this.fileChangedHandler} name="post_picture" accept="image/*"></input></p>
                     <div class="hashtags-box container row">
                     
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#symposiumprep")}>#symposiumprep</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#ArrivingInStyle")}>#ArrivingInStyle</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromBengaluru")}>#FromBengaluru</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromChennai")}>#FromChennai</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromDelhi")}>#FromDelhi</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromMumbai")}>#FromMumbai</span>
-                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#FromKolkata")}>#FromKolkata</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#appdev")}>#appdev</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#AwesomeSession")}>#AwesomeSession</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#naturewalk")}>#naturewalk</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#cycling")}>#cycling</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#yoga")}>#yoga</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#gym")}>#gym</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#CityTour")}>#CityTour</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#SymposiumRocks")}>#SymposiumRocks</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#OurSelfie")}>#OurSelfie</span>
+                        <span class="usable-hashtags col-xs-4" onClick={this.addToPost.bind(this, "#AboutYesterday")}>#AboutYesterday</span>
                     
                     </div>
                     <button type="button" class="btn btn-success post-button" type="submit">Post</button>

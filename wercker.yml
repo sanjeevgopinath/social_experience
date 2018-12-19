@@ -100,7 +100,7 @@ kubernetes-deploy:
         token: $KUBE_USER_TOKEN
         insecure-skip-tls-verify: true
         cwd: $WERCKER_ROOT/.
-        command: apply -f socialexperience-frontend-deployment.yaml
+        command: -n se-test apply -f socialexperience-frontend-deployment.yaml
   after-steps:
     - install-packages:
         packages: ruby

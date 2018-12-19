@@ -20,7 +20,7 @@ class Footer extends Component {
                             <Link to={`/cityTour`}><span class="material-icons bottom-bar-icon">commute</span></Link>
                         </div>
                         <div class="col-2">
-                            <span class="material-icons bottom-bar-icon">star</span>
+                            <Link to={`/appDevLinks`}><span class="material-icons bottom-bar-icon">star</span></Link>
                         </div>
                         <div class="col-2">
                             <Link to={`/eventInfo`}><span class="material-icons bottom-bar-icon">event</span></Link>

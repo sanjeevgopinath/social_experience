@@ -4,7 +4,7 @@ import logo from './logo.svg';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-
+import appDevLinks from './appDevLinks';
 import Header from './Header.js';
 import Footer from './Footer.js';
 import execMessage from './execMessage.js';
@@ -48,7 +48,7 @@ const Main = () => (
         <PrivateRoute exact path='/resetPassword' component={resetPassword} />
         <PrivateRoute exact path='/cityTour' component={cityTour} />
         <PrivateRoute exact path='/morningActivities' component={morningActivities} />
-
+        <PrivateRoute exact path='/appDevLinks' component={appDevLinks} />
         <Route path='/Login' component={Login}/>
       </Switch>
   </main>

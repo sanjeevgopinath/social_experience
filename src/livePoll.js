@@ -6,7 +6,8 @@ class livePoll extends Component {
         return(
             <div>
                 <h2>Live Poll</h2>
-                <div>will appear here during the event...</div>
+                <br />
+                <div><a href="http://bit.ly/sesymp" class="btn btn-primary">OCI Live Poll</a></div>
             </div>
         );
     }

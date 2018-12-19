@@ -86,14 +86,14 @@ kubernetes-deploy:
         token: $KUBE_USER_TOKEN
         insecure-skip-tls-verify: true
         cwd: $WERCKER_ROOT/.
-        command: delete secret $OCIR_SECRET_NAME
+        command: -n se-test delete secret $OCIR_SECRET_NAME
 
     - kubectl:
         server: $KUBE_ENDPOINT
         token: $KUBE_USER_TOKEN
         insecure-skip-tls-verify: true
         cwd: $WERCKER_ROOT/.
-        command: create secret docker-registry $OCIR_SECRET_NAME --docker-server='${PRIVATE_REGISTRY_PATH}' --docker-username=$CONTAINER_REGISTRY_USERNAME --docker-password='${API_USER_TOKEN}' --docker-email='saibalaji.rajaraman@outlook.com' 
+        command: -n se-test create secret docker-registry $OCIR_SECRET_NAME --docker-server='${PRIVATE_REGISTRY_PATH}' --docker-username=$CONTAINER_REGISTRY_USERNAME --docker-password='${API_USER_TOKEN}' --docker-email='saibalaji.rajaraman@outlook.com' 
      
     - kubectl:
         server: $KUBE_ENDPOINT
@@ -107,4 +107,3 @@ kubernetes-deploy:
     - pasonatquila/pretty-slack-notify@0.3.6:
         webhook_url: $SLACK_URL
         channel: $SLACK_CHANNEL
-

@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return(
             <div className="Header">        
-                <nav className="navbar fixed-top  navbar-expand-xl navbar-dark bg-danger">
+                <nav className="navbar fixed-top  navbar-expand-xl navbar-dark">
                 <Link to={`/`}><span className="navbar-brand">SE Symposium FY19</span></Link>
                 <ul className="navbar-nav scroll ml-auto">
                     <li className="nav-item">

@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return(
             <div class="Footer">        
-                <div class = "bottom-bar container-fluid fixed-bottom bg-success">
+                <div class = "bottom-bar container-fluid fixed-bottom">
                     <div class="row align-items-center">
                         <div class="col-2">
                             <Link to={`/newsfeed`}><span class="material-icons bottom-bar-icon">public</span></Link>

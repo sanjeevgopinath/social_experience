@@ -40,6 +40,10 @@ class Login extends Component {
         const { username, password, error_ispresent_fields } = this.state;
             if(username && password) {
                 this.setState({error_ispresent_fields: true});
+                /* ++++++++++++++++++++ */
+                this.props.history.push('/execMessage');
+                
+                /* ------------------- *
                 authService.authenticate(username, password)
                 .then(response => {
                     console.log("Success Response!");
@@ -47,7 +51,8 @@ class Login extends Component {
                 })
                 .catch(err => {
                     this.setState({error_iswrongcredential: true});
-                });                
+                });
+                * -------------------- */                
             }
             else {
                 this.setState({error_ispresent_fields: false});

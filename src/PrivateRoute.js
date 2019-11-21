@@ -8,7 +8,7 @@ function PrivateRoute({ component: Component, ...rest }) {
       <Route
         {...rest}
         render={props =>
-          authService.isAuthenticated() ? (
+          /* ---------- authService.isAuthenticated() */ 1 ? (
             <Component {...props} />
           ) : (
             <Redirect

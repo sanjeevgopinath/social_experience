@@ -35,7 +35,6 @@ class App extends Component {
 const Main = () => (
   <main>
       <Switch>
-
         <PrivateRoute exact path='/' component={execMessage}/>
         <PrivateRoute exact path='/execMessage' component={execMessage}/>
         <PrivateRoute exact path='/newsfeed' component={newsfeed}/>

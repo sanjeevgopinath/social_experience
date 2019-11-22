@@ -20,14 +20,24 @@ import { PrivateRoute } from './PrivateRoute.js'
 import resetPassword from './resetPassword.js';
 import cityTour from './cityTour.js';
 import morningActivities from './morningActivities';
+import ApolloClient from 'apollo-boost';
+import { config } from './config';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+const queryclient = new ApolloClient({
+    uri: config.graphQLEndPoint,
+});
+
 class App extends Component {
   render() {
     return (
-      <div class="App">
-        <Header />
-        <Main />
-        <Footer />
-      </div>
+      <ApolloProvider client={queryclient}>
+        <div class="App">
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      </ApolloProvider>
     );
   }
 }

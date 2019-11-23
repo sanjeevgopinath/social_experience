@@ -1,16 +1,33 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Timeline, TimelineEvent, TimelineBlip} from 'react-event-timeline';
+
+
+import Collapsible from 'react-collapsible';
+
+
 import './eventInfo.css';
 
 class eventInfo extends Component {
-    render() {
+		
+	state = {
+    isOpen1: false,
+    isOpen2: false,
+    isOpen3: false,
+    spy3: {}
+  };
+	
+	render() {
         return(
             <div class="eventinfo">
                 <h3>Event Information</h3>
-								<h5 class="dayinfo">Day 1 - Monday    - 2nd December, 2019</h5>
-								<Timeline lineColor="black">
-					  <TimelineEvent
+
+								<Collapsible trigger="Day 1 - Monday    - 2nd December, 2019" className="day1" contentInnerClassName="day1" triggerOpenedClassName="day1" transitionTime="100">
+        					
+									<Timeline lineColor="black">
+									
+
+									<TimelineEvent
 						title=" 🛫 Arrive at Amritsar !"
 						titleStyle={{ fontWeight: "bold" }}
 						subtitle=" SE Symposium 2019 is Coming !"
@@ -47,12 +64,10 @@ class eventInfo extends Component {
 						showContent
 					  >
 						<p class="timeline-content">Hotel Address:</p>
-						<div>
-						Plot No. C-3, Outer Circular Road, Opp. Basant Avenue , Amritsar , 143001.{" "}
-						  <p class="timeline-content">
+						<p class="timeline-content">Plot No. C-3, Outer Circular Road, Opp. Basant Avenue , Amritsar , 143001.</p>
+						<p class="timeline-content">
 							Phone: +91 0183-6658000
 						  </p>
-						</div>
 					  </TimelineEvent>
 					  <TimelineEvent
 						title="Relax"
@@ -75,7 +90,7 @@ class eventInfo extends Component {
 						showContent
 					  >
 						<div>
-						  Take a stroll, Relax, Say hello to your colleagues, Make some new Friends and Enjoy some Amritsari Kulchas !
+						<p class="timeline-content">Take a stroll, Relax, Say hello to your colleagues, Make some new Friends and Enjoy some Amritsari Kulchas !</p>
 						</div>
 					  </TimelineEvent>
 					  <TimelineEvent
@@ -96,8 +111,8 @@ class eventInfo extends Component {
 						collapsible
 						showContent
 					  >
-						<div>
-						  Assemble at 3 PM, in the Trinity Hall 
+						<div class="timeline-content">
+						Assemble at 3 PM, in the Trinity Hall 
 						  As SE's we always love to be ahead of time !
 						</div>
 					  </TimelineEvent>
@@ -408,10 +423,11 @@ class eventInfo extends Component {
 						  style={{ color: "#503331" }}
 						/>
 						</TimelineEvent>
-
 					</Timeline>
-								<h5 class="dayinfo">Day 2 - Tuesday   - 3rd December, 2019</h5>
+							</Collapsible>
 
+								
+<Collapsible trigger="Day 2 - Tuesday   - 3rd December, 2019" className="day2" contentInnerClassName="day2" triggerOpenedClassName="day2" transitionTime="100">
 								<Timeline lineColor="black">
 					  <TimelineEvent
 						title="Good Morning Amritsar ! - Morning Activities"
@@ -432,9 +448,9 @@ class eventInfo extends Component {
 						showContent
 					  >						
 						<div>
-						<p>Cycling</p>
-						<p>Heritage Walk</p>
-						<p>Golden Temple</p>						  
+						<p class="timeline-content">Cycling</p>
+						<p class="timeline-content">Heritage Walk</p>
+						<p class="timeline-content">Golden Temple</p>						  
 						</div>	
 					  </TimelineEvent>
 					  <TimelineEvent
@@ -1215,9 +1231,9 @@ class eventInfo extends Component {
 						</TimelineEvent>	
 
 					</Timeline>
-
-								<h5 class="dayinfo">Day 3 - Wednesday - 4th December, 2019</h5>
-
+					</Collapsible>
+								
+								<Collapsible trigger="Day 3 - Wednesday - 4th December, 2019" className="day3" contentInnerClassName="day3" triggerOpenedClassName="day3" transitionTime="100">
 								<Timeline lineColor="black">
 					  <TimelineEvent
 						title="Good Morning Amritsar ! - Morning Activities"
@@ -1238,9 +1254,9 @@ class eventInfo extends Component {
 						showContent
 					  >						
 						<div>
-						<p>Cycling</p>
-						<p>Heritage Walk</p>
-						<p>Golden Temple</p>						  
+						<p class="timeline-content">Cycling</p>
+						<p class="timeline-content">Heritage Walk</p>
+						<p class="timeline-content">Golden Temple</p>						  
 						</div>	
 					  </TimelineEvent>
 					  <TimelineEvent
@@ -1676,9 +1692,9 @@ class eventInfo extends Component {
 						/>
 						</TimelineEvent>
 					</Timeline>
-
-								<h5 class="dayinfo">Day 4 - Thrusday  - 5th December, 2019</h5>
-                <hr />
+					</Collapsible>
+							
+								<Collapsible trigger="Day 4 - Thursday - 5th December, 2019" className="day4" contentInnerClassName="day4" triggerOpenedClassName="day4" transitionTime="100">			
 					<Timeline lineColor="black">
 					  <TimelineEvent
 						title="Good Morning Guys ! Let's checkout !"
@@ -1831,7 +1847,13 @@ class eventInfo extends Component {
 						/>
 						</TimelineEvent>
 
-					</Timeline>
+
+
+									</Timeline>
+
+      					</Collapsible>
+
+								
             </div>
 
         );

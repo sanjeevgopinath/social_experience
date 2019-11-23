@@ -1,7 +1,72 @@
 .timeline-content {
     margin:2px;
+    color:black;
 }
 
 .eventinfo {
     font-family: Roboto;
 }
+
+.dayinfo{
+    background-color:orange;
+}
+
+.day1 {
+    background-color:orange;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+  .day2 {
+    background-color:#6a884f;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+  .day3 {
+    background-color:#669999;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+  .day4 {
+    background-color:#663333;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+  .p{
+      color: black;
+  }
+
+  .CollapsibleContentOpen {
+      font-size: 20px;
+  }
